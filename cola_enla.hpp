@@ -10,7 +10,7 @@ public:
 
 	explicit Cola();
 	Cola(const Cola<T>& c);
-	Cola<T>& operator =();
+	Cola<T>& operator =(const Cola<T>& c);
 
 	bool vacia();
 
@@ -30,7 +30,7 @@ private:
 		nodo(const T& e, nodo* p=0): elto{e}, sig{p}{}
 	};
 
-	nodo inicio*, fin*;
+	nodo* inicio, fin;
 
 	void copiar(const Cola<T> C);
 
@@ -44,11 +44,11 @@ void Cola<T>::copiar(const Cola<T> C)
 
 		// copiar el primer elemento
 
-		inicio = fin = nodo(C->inicio.elto)
+		inicio = fin = nodo(C->inicio.elto);
 
-		for(nodo* i = C.inicio->sig ; p; p=p->sig)
+		for(nodo* p = C.inicio->sig ; p; p=p->sig)
 		{	
-			fin->sig = nodo(p->elto)
+			fin->sig = nodo(p->elto);
 			fin= fin->sig;
 		}
 
@@ -57,7 +57,7 @@ void Cola<T>::copiar(const Cola<T> C)
 }
 
 template<typename T>
-explicit Cola():
+Cola<T>::Cola():
 inicio{0},
 fin{0}
 {}
@@ -78,7 +78,7 @@ inline Cola<T>& Cola<T>::operator=(const Cola& C)
 }
 
 template<typename T>
-inline bool vacia(){ return inicio == 0;}
+inline bool Cola<T>::vacia(){ return inicio == 0;}
 
 template<typename T>
 inline const T& Cola<T>::frente()
@@ -88,9 +88,9 @@ inline const T& Cola<T>::frente()
 }
 
 template<typename T>
-Cola<T>::pop()
+void Cola<T>::pop()
 {
-	assert(!vacia()):
+	assert(!vacia());
 	nodo* p = inicio;
 	inicio = inicio->siguiente;
 	if(!inicio) fin =0;
