@@ -1,5 +1,5 @@
 CXX = clang++
-OBJS = isomorficas.cpp
+OBJS = tests.o
 
 all: main
 

@@ -30,7 +30,7 @@ private:
 		nodo(const T& e, nodo* p=0): elto{e}, sig{p}{}
 	};
 
-	nodo* inicio, fin;
+	nodo *inicio, *fin;
 
 	void copiar(const Cola<T> C);
 
@@ -44,11 +44,12 @@ void Cola<T>::copiar(const Cola<T> C)
 
 		// copiar el primer elemento
 
-		inicio = fin = nodo(C->inicio.elto);
+		inicio = fin = new nodo(C.inicio->elto);
+
 
 		for(nodo* p = C.inicio->sig ; p; p=p->sig)
 		{	
-			fin->sig = nodo(p->elto);
+			fin->sig = new nodo(p->elto);
 			fin= fin->sig;
 		}
 
@@ -92,7 +93,7 @@ void Cola<T>::pop()
 {
 	assert(!vacia());
 	nodo* p = inicio;
-	inicio = inicio->siguiente;
+	inicio = inicio->sig;
 	if(!inicio) fin =0;
 
 	delete p;
