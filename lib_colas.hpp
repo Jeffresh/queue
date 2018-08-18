@@ -20,7 +20,6 @@ bool isomorfica(Cola<T> C, Pila<T> P)
 
 	while( seguir &&  !C.vacia() && !P.vacia())
 	{
-		std::cout<<"Tu puta madre";
 		if(i%2==1)
 			a=C.frente();
 
