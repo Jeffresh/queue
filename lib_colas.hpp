@@ -40,8 +40,5 @@ bool isomorfica(Cola<T> C, Pila<T> P)
 
 }
 
-
-
-
-Cola<int> invsec(Cola<int>);
+Cola<int> invsec(Cola<int>, int, int);
 

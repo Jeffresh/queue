@@ -1,10 +1,13 @@
 CXX = clang++ -std=c++17
-OBJS =  tests.o
+OBJS1 =  tests.o
+OBJS2 = invsec.o tests.o
 
-all: main
 
-main: $(OBJS)
-	$(CXX) $(OBJS)  -o iso
+v0.1: $(OBJS)
+	$(CXX) $(OBJS1)  -o iso
+
+v0.2: $(OBJS2)
+	$(CXX) $(OBJS2) -o invsec
 
 clean:
 	-rm -f *.o core *.core
