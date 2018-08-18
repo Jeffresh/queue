@@ -32,12 +32,12 @@ private:
 
 	nodo *inicio, *fin;
 
-	void copiar(const Cola<T> C);
+	void copiar(const Cola<T>& C);
 
 };
 
 template<typename T>
-void Cola<T>::copiar(const Cola<T> C)
+void Cola<T>::copiar(const Cola<T>& C)
 {
 	if(C.inicio) // no está vacía
 	{

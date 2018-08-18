@@ -2,10 +2,9 @@
 
 int main()
 {
-	std::cout<<"Tu puta madre";
 	
-	Cola<int> C{};
-	Pila<int> P{};
+	Cola<int> C;
+	Pila<int> P;
 
 	for(int i = 1 ; i <=10 ; i++)
 	{
@@ -23,12 +22,15 @@ int main()
 
 	}
 
-	isomorfica(C,P);
 
-	if(1)
+
+
+
+	if(isomorfica(C,P))
 		std::cout<<"Son isomorficas"<<std::endl;
 	else
-		std::cout<<"No son isomorficas"<<std::endl;
+		std::cout<<"No son isomorficas"<<std::endl; 
+
 
 
 

@@ -1,5 +1,5 @@
-CXX = clang++
-OBJS = tests.o
+CXX = clang++ -std=c++17
+OBJS =  tests.o
 
 all: main
 
