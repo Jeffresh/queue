@@ -6,21 +6,34 @@ int main()
 	Cola<int> C;
 	Pila<int> P;
 
-	for(int i = 1 ; i <=10 ; i++)
+	for(int i = 1 ; i <5 ; i++)
 	{
 		if(i%2 ==1)
 		{
-			P.push(i);
-			C.push(69);
+			C.push(i);
 		}
 		else
 		{
-			C.push(i);
-			P.push(96);
+			C.push(96);
 		}
 
 
 	}
+
+	for(int i = 5 ; i >=1 ; i--)
+	{
+		if(i%2 ==1)
+		{
+			P.push(96);
+		}
+		else
+		{
+			P.push(i-1);
+		}
+
+
+	}
+
 
 
 
